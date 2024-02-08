@@ -17,6 +17,9 @@ A quick introduction of the minimal setup you need to get this Http parser up an
   - [Dockerfile]
   - [requirements.txt]
 
+  * http_parser directory contains Dockerfile which is used by Docker to create the Docker image which includes all the environment variables and dependencies needed to run the program and it takes the requirement.txt file present in the folder to install these dependencies recursively.
+  * files directory is separated out from http_parser as any changes that we make in the files folder can be made available at runtime without recreating the image, this directory contains the python script that runs which takes the pcap file which is present in pcap folder.
+
 
 ### Initial Configuration
 
