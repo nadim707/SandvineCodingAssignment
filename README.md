@@ -29,6 +29,12 @@ docker version
 Once Docker is setup, run the following commands in order to create a Docker image and then start Docker Container
 
 ```shell
-docker build -t http_parser . # run from the directory containing Dockerfile
-docker run -e filename="./pcap_files/capture.pcap" -v /Users/fci/Desktop/assignment/files:/app --name http_analyser http_parser #-e option argumne t provides the pcap file path as commandlie argument, -v option argument provides the path to mount files directory which contains the python script as well as pcaps files insde the app directory of docker image
+#  run from the directory containing Dockerfile
+docker build -t http_parser . # docker build -t http_parser <directory of Dockerfile>
+```
+ 
+```shell
+#  with -e option, provide the pcap file path as commandline argument
+#  with -v option, provide the absolute path of <files> directory which contains the python script as well as pcaps files which mounts this directory insde the app directory of docker image
+docker run -e filename="./pcap_files/capture.pcap" -v /Users/fci/Desktop/assignment/files:/app --name http_analyser http_parser
 ```
